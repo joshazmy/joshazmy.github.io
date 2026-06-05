@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Josh Azmy — builder</title>
+<meta name="description" content="18-year-old engineer who ships real hardware and software end-to-end by orchestrating AI agents.">
+<style>
+  :root{
+    --bg:#0c0c0f; --panel:#141418; --line:#23232b; --ink:#ecedf0; --dim:#9a9aa6; --faint:#6b6b76;
+    --accent:#e0986e; --green:#4ade80;
+    --mono:"SF Mono",ui-monospace,"JetBrains Mono",Consolas,monospace;
+    --sans:-apple-system,"Inter","Segoe UI",Roboto,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;
+    -webkit-font-smoothing:antialiased;padding:0 24px}
+  .wrap{max-width:760px;margin:0 auto}
+  section{padding:64px 0;border-bottom:1px solid var(--line)}
+  section:last-child{border-bottom:0}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+  h1{font-size:clamp(38px,8vw,68px);line-height:1.04;letter-spacing:-.02em;margin:18px 0 20px;font-weight:700}
+  h2{font-family:var(--mono);font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin-bottom:26px}
+  h3{font-size:20px;letter-spacing:-.01em}
+  .lead{font-size:clamp(17px,2.4vw,21px);color:var(--dim);max-width:62ch}
+  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .15s}
+  a:hover{border-color:var(--accent)}
+  /* hero */
+  .hero{padding-top:120px}
+  .meta{font-family:var(--mono);font-size:13px;color:var(--faint);margin-top:28px}
+  .meta b{color:var(--green);font-weight:500}
+  /* projects */
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px;margin-top:18px}
+  .card .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .tag{font-family:var(--mono);font-size:11px;color:var(--faint);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+  .tag.live{color:var(--green);border-color:#2a4a36}
+  .tag.wip{color:var(--accent);border-color:#4a3528}
+  .card p{color:var(--dim);font-size:15px;margin:10px 0 0}
+  .stack{font-family:var(--mono);font-size:12px;color:var(--faint);margin-top:14px}
+  .links{margin-top:14px;display:flex;gap:18px;font-size:14px}
+  /* skills */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px 28px}
+  .grid div{font-size:15px;color:var(--dim);padding:6px 0;border-bottom:1px dashed var(--line)}
+  .grid b{color:var(--ink);font-weight:500}
+  /* contact */
+  .contact a{font-family:var(--mono);font-size:15px;display:inline-block;margin-right:24px;margin-top:8px}
+  footer{padding:40px 0;color:var(--faint);font-family:var(--mono);font-size:12px}
+  /* TODO: replace [your-…] placeholders, then host free on Cloudflare Pages / GitHub Pages */
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <section class="hero">
+    <div class="eyebrow">Josh Azmy · 18</div>
+    <h1>I ship real things by orchestrating AI agents.</h1>
+    <p class="lead">Hardware, firmware, and software — end to end. I build with a fleet of
+      AI agents across machines, then own the parts that matter: the architecture, the
+      taste, and whether it actually works.</p>
+    <div class="meta">open to <b>engineering / AI roles</b> · internships · contract — <a href="#contact">get in touch ↓</a></div>
+  </section>
+
+  <section>
+    <h2>Selected work</h2>
+
+    <div class="card">
+      <div class="top">
+        <h3>Claude Usage Gauge</h3>
+        <span class="tag wip">hardware · bring-up</span>
+      </div>
+      <p>A desk gadget that shows my live Claude token usage as pixel art on a 2" round-corner
+        screen — a pixel creature whose face escalates calm → focused → worried → dead-eyed,
+        plus two color-by-fill bars. Built the full stack: a stdlib usage reader, a 1:1 browser
+        simulator of the panel, ESP32-S3 firmware (Arduino_GFX, PSRAM framebuffer, a serial
+        protocol with an explicit stale-data state), and a PC→device bridge. Ran adversarial
+        code reviews on it and fixed a critical pin-map and a stale-data bug before shipping.</p>
+      <div class="stack">ESP32-S3 · C++ / Arduino_GFX · Python · HTML Canvas · serial</div>
+      <div class="links"><a href="https://github.com/joshazmy/claude-usage-gauge">repo →</a><a href="#">demo (soon) →</a></div>
+    </div>
+
+    <div class="card">
+      <div class="top">
+        <h3>Portable AI coding environment</h3>
+        <span class="tag wip">writeup soon</span>
+      </div>
+      <p>A reproducible, multi-machine setup that gives every machine the same fleet of AI
+        coding tools from one config, controllable from my phone. Tuned it for ~5× fewer
+        tools loaded per session to cut latency and cost.</p>
+      <div class="stack">MCP · Node · cross-platform config · Telegram control</div>
+      <div class="links"><a href="https://github.com/joshazmy/portable-ai-coding-env">repo →</a></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>What I work with</h2>
+    <div class="grid">
+      <div><b>Embedded</b> · ESP32-S3, Arduino, SPI displays</div>
+      <div><b>AI / agents</b> · multi-agent orchestration, MCP</div>
+      <div><b>Languages</b> · TypeScript, Python, C/C++</div>
+      <div><b>Automation</b> · hooks, scheduled jobs, n8n</div>
+      <div><b>Web</b> · HTML/CSS/JS, Canvas, static hosting</div>
+      <div><b>Tooling</b> · git, PlatformIO, the CLI</div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p class="lead">Building something where an 18-year-old who ships fast would help? Let's talk.</p>
+    <a href="mailto:joshazmy@gmail.com">joshazmy@gmail.com</a>
+    <a href="https://github.com/joshazmy">github</a>
+  </section>
+
+  <footer>built by hand · no template · 2026</footer>
+
+</div>
+</body>
+</html>
