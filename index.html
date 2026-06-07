@@ -20,10 +20,10 @@
   section{padding:64px 0;border-bottom:1px solid var(--line)}
   section:last-child{border-bottom:0}
   .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
-  h1{font-size:clamp(38px,8vw,68px);line-height:1.04;letter-spacing:-.02em;margin:18px 0 20px;font-weight:700}
+  h1{font-size:clamp(38px,8vw,68px);line-height:1.04;letter-spacing:-.02em;margin:18px 0 20px;font-weight:700;text-wrap:balance}
   h2{font-family:var(--mono);font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin-bottom:26px}
   h3{font-size:20px;letter-spacing:-.01em}
-  .lead{font-size:clamp(17px,2.4vw,21px);color:var(--dim);max-width:62ch}
+  .lead{font-size:clamp(17px,2.4vw,21px);color:var(--dim);max-width:62ch;text-wrap:pretty}
   a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .15s}
   a:hover{border-color:var(--accent)}
   a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:1px}
@@ -73,8 +73,8 @@
       </div>
       <p>A desk gadget that shows my live Claude usage as pixel art on a 2" screen — and
         <b>flashes when a session needs me</b>: amber when Claude Code is waiting on me (a
-        permission prompt or idle input), green when a long turn finishes while I'm away. A
-        pixel creature's face escalates calm → focused → worried → dead-eyed above two
+        permission prompt or idle input), green when a long turn finishes while I’m away. A
+        pixel creature’s face escalates calm → focused → worried → dead-eyed above two
         color-by-fill usage bars. Built the full stack: Claude Code hooks → a beacon state
         file, a stdlib usage reader, a documented design system, a 1:1 browser simulator of
         the panel, and ESP32-S3 firmware (Arduino_GFX, PSRAM framebuffer, a serial protocol
@@ -133,7 +133,7 @@
 
   <section id="contact" class="contact">
     <h2>Contact</h2>
-    <p class="lead">Building something where an 18-year-old who ships fast would help? Let's talk.</p>
+    <p class="lead">Building something where an 18-year-old who ships fast would help? Let’s talk.</p>
     <a href="mailto:joshazmy@gmail.com">joshazmy@gmail.com</a>
     <a href="https://github.com/joshazmy">github</a>
   </section>
