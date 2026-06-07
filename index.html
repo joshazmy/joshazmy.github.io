@@ -39,7 +39,8 @@
   .tag.wip{color:var(--accent);border-color:#4a3528}
   .card p{color:var(--dim);font-size:15px;margin:10px 0 0}
   .stack{font-family:var(--mono);font-size:12px;color:var(--faint);margin-top:14px}
-  .links{margin-top:14px;display:flex;gap:18px;font-size:14px}
+  .links{margin-top:12px;display:flex;gap:18px;font-size:14px}
+  .links a,.links span{padding:4px 0}
   .links span{color:var(--faint)}
   .card p b{color:var(--ink);font-weight:600}
   /* skills */
@@ -47,12 +48,15 @@
   .grid div{font-size:15px;color:var(--dim);padding:6px 0;border-bottom:1px dashed var(--line)}
   .grid b{color:var(--ink);font-weight:500}
   /* contact */
-  .contact a{font-family:var(--mono);font-size:15px;display:inline-block;margin-right:24px;margin-top:8px}
+  .contact a{font-family:var(--mono);font-size:15px;display:inline-block;margin-right:24px;margin-top:8px;padding:5px 0}
   footer{padding:40px 0;color:var(--faint);font-family:var(--mono);font-size:12px}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
 <div class="wrap">
+
+  <main>
 
   <section class="hero">
     <div class="eyebrow">Josh Azmy · 18</div>
@@ -81,7 +85,7 @@
         with an explicit stale-data state). Hardened through multi-agent and adversarial
         Codex reviews before shipping.</p>
       <div class="stack">ESP32-S3 · C++ / Arduino_GFX · Python · HTML Canvas · Claude Code hooks</div>
-      <div class="links"><a href="https://github.com/joshazmy/claude-usage-gauge">repo →</a><span>demo · soon</span></div>
+      <div class="links"><a href="https://github.com/joshazmy/claude-usage-gauge" aria-label="Claude Usage Gauge repository">repo →</a><span>demo · soon</span></div>
     </div>
 
     <div class="card">
@@ -93,7 +97,7 @@
         coding tools from one config, controllable from my phone. Tuned it for ~5× fewer
         tools loaded per session to cut latency and cost.</p>
       <div class="stack">MCP · Node · cross-platform config · Telegram control</div>
-      <div class="links"><a href="https://github.com/joshazmy/portable-ai-coding-env">repo →</a></div>
+      <div class="links"><a href="https://github.com/joshazmy/portable-ai-coding-env" aria-label="Portable AI coding environment repository">repo →</a></div>
     </div>
 
     <div class="card">
@@ -104,7 +108,7 @@
       <p>A local web dashboard to launch and manage all my coding projects from one place —
         Node + Express, localhost-only with token auth.</p>
       <div class="stack">Node.js · Express · auth · Windows</div>
-      <div class="links"><a href="https://github.com/joshazmy/project-nexus">repo →</a></div>
+      <div class="links"><a href="https://github.com/joshazmy/project-nexus" aria-label="Project Nexus repository">repo →</a></div>
     </div>
 
     <div class="card">
@@ -115,7 +119,7 @@
       <p>A field guide to my AI build pipeline — which skill to reach for at each phase
         (spec → design → build → verify → harden → ship) so a vague idea becomes a shipped
         tool without overthinking it.</p>
-      <div class="links"><a href="https://github.com/joshazmy/build-playbook">repo →</a></div>
+      <div class="links"><a href="https://github.com/joshazmy/build-playbook" aria-label="Build Playbook repository">repo →</a></div>
     </div>
   </section>
 
@@ -137,6 +141,8 @@
     <a href="mailto:joshazmy@gmail.com">joshazmy@gmail.com</a>
     <a href="https://github.com/joshazmy">github</a>
   </section>
+
+  </main>
 
   <footer>built by hand · no template · 2026</footer>
 
