@@ -39,6 +39,8 @@
   .card p{color:var(--dim);font-size:15px;margin:10px 0 0}
   .stack{font-family:var(--mono);font-size:12px;color:var(--faint);margin-top:14px}
   .links{margin-top:14px;display:flex;gap:18px;font-size:14px}
+  .links span{color:var(--faint)}
+  .card p b{color:var(--ink);font-weight:600}
   /* skills */
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px 28px}
   .grid div{font-size:15px;color:var(--dim);padding:6px 0;border-bottom:1px dashed var(--line)}
@@ -46,7 +48,6 @@
   /* contact */
   .contact a{font-family:var(--mono);font-size:15px;display:inline-block;margin-right:24px;margin-top:8px}
   footer{padding:40px 0;color:var(--faint);font-family:var(--mono);font-size:12px}
-  /* TODO: replace [your-…] placeholders, then host free on Cloudflare Pages / GitHub Pages */
 </style>
 </head>
 <body>
@@ -69,14 +70,17 @@
         <h3>Claude Usage Gauge</h3>
         <span class="tag wip">hardware · bring-up</span>
       </div>
-      <p>A desk gadget that shows my live Claude token usage as pixel art on a 2" round-corner
-        screen — a pixel creature whose face escalates calm → focused → worried → dead-eyed,
-        plus two color-by-fill bars. Built the full stack: a stdlib usage reader, a 1:1 browser
-        simulator of the panel, ESP32-S3 firmware (Arduino_GFX, PSRAM framebuffer, a serial
-        protocol with an explicit stale-data state), and a PC→device bridge. Ran adversarial
-        code reviews on it and fixed a critical pin-map and a stale-data bug before shipping.</p>
-      <div class="stack">ESP32-S3 · C++ / Arduino_GFX · Python · HTML Canvas · serial</div>
-      <div class="links"><a href="https://github.com/joshazmy/claude-usage-gauge">repo →</a><a href="#">demo (soon) →</a></div>
+      <p>A desk gadget that shows my live Claude usage as pixel art on a 2" screen — and
+        <b>flashes when a session needs me</b>: amber when Claude Code is waiting on me (a
+        permission prompt or idle input), green when a long turn finishes while I'm away. A
+        pixel creature's face escalates calm → focused → worried → dead-eyed above two
+        color-by-fill usage bars. Built the full stack: Claude Code hooks → a beacon state
+        file, a stdlib usage reader, a documented design system, a 1:1 browser simulator of
+        the panel, and ESP32-S3 firmware (Arduino_GFX, PSRAM framebuffer, a serial protocol
+        with an explicit stale-data state). Hardened through multi-agent and adversarial
+        Codex reviews before shipping.</p>
+      <div class="stack">ESP32-S3 · C++ / Arduino_GFX · Python · HTML Canvas · Claude Code hooks</div>
+      <div class="links"><a href="https://github.com/joshazmy/claude-usage-gauge">repo →</a><span>demo · soon</span></div>
     </div>
 
     <div class="card">
@@ -100,6 +104,17 @@
         Node + Express, localhost-only with token auth.</p>
       <div class="stack">Node.js · Express · auth · Windows</div>
       <div class="links"><a href="https://github.com/joshazmy/project-nexus">repo →</a></div>
+    </div>
+
+    <div class="card">
+      <div class="top">
+        <h3>Build Playbook</h3>
+        <span class="tag">guide</span>
+      </div>
+      <p>A field guide to my AI build pipeline — which skill to reach for at each phase
+        (spec → design → build → verify → harden → ship) so a vague idea becomes a shipped
+        tool without overthinking it.</p>
+      <div class="links"><a href="https://github.com/joshazmy/build-playbook">repo →</a></div>
     </div>
   </section>
 
