@@ -7,7 +7,7 @@
 <meta name="description" content="18-year-old engineer who ships real hardware and software end-to-end by orchestrating AI agents.">
 <style>
   :root{
-    --bg:#0c0c0f; --panel:#141418; --line:#23232b; --ink:#ecedf0; --dim:#9a9aa6; --faint:#6b6b76;
+    --bg:#0c0c0f; --panel:#141418; --line:#23232b; --ink:#ecedf0; --dim:#9a9aa6; --faint:#80808b;
     --accent:#e0986e; --green:#4ade80;
     --mono:"SF Mono",ui-monospace,"JetBrains Mono",Consolas,monospace;
     --sans:-apple-system,"Inter","Segoe UI",Roboto,system-ui,sans-serif;
@@ -26,6 +26,7 @@
   .lead{font-size:clamp(17px,2.4vw,21px);color:var(--dim);max-width:62ch}
   a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .15s}
   a:hover{border-color:var(--accent)}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:1px}
   /* hero */
   .hero{padding-top:120px}
   .meta{font-family:var(--mono);font-size:13px;color:var(--faint);margin-top:28px}
