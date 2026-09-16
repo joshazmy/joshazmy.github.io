@@ -1,134 +1,77 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; img-src 'self' data:; font-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'"
-    />
-    <meta name="referrer" content="no-referrer" />
-    <title>Joshua</title>
-    <meta
-      name="description"
-      content="I build local tools, Chrome extensions, and open-source features. SWE intern, tooling, QA, or implementation."
-    />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230B0B0C'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' fill='%23EDE6D6' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E"
-    />
-    <script type="module" crossorigin src="/assets/index-DKCYLl1-.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-8Zwbv50h.css">
+    <title>jhon · joshazmy</title>
+    <meta name="description" content="Local tools, Chrome extensions, and open-source features. github.com/joshazmy" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <a class="skip" href="#who">Skip to content</a>
+    <div id="world">
+      <div id="stage">
+        <video data-plate="home" poster="./media/world/home.jpg" muted playsinline loop preload="auto">
+          <source src="./media/world/home.mp4" type="video/mp4" />
+        </video>
+        <video data-plate="morph" poster="./media/world/morph.jpg" muted playsinline preload="none">
+          <source src="./media/world/morph.mp4" type="video/mp4" />
+        </video>
+        <canvas id="morph-seq" aria-hidden="true"></canvas>
+        <video data-plate="about" poster="./media/world/about.jpg" muted playsinline loop preload="auto">
+          <source src="./media/world/about.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+    <canvas id="dust"></canvas>
 
-    <header class="bar">
-      <a class="brand" href="#who">Joshua</a>
-      <nav class="ticks" aria-label="Stations">
-        <a href="#who" class="is-on" aria-current="page">Profile</a>
-        <a href="#shipped">Work</a>
-        <a href="#sunset">Archive</a>
-        <a href="#find">Contact</a>
-      </nav>
-      <a class="git" href="https://github.com/joshazmy">GitHub</a>
+    <header class="nav">
+      <div class="capsule">
+        <a id="nav-work" href="#/work">WORK</a>
+        <i></i>
+        <a id="nav-edu" href="#/edu">EDU</a>
+      </div>
     </header>
 
-    <main>
-      <canvas id="field" aria-hidden="true"></canvas>
-      <div class="veil" aria-hidden="true"></div>
-      <div class="page copy">
-        <article class="station is-on" id="who" tabindex="-1">
-          <p class="kicker">SWE intern</p>
-          <h1 class="wordmark">Joshua</h1>
-          <p class="proof">I build local tools, Chrome extensions, and open-source features.</p>
-          <p>SWE intern, tooling, QA, or implementation.</p>
-          <p class="meta">
-            <a href="https://github.com/open-jarvis/OpenJarvis/pull/486">OpenJarvis PR 486</a>
-            · <a href="https://github.com/joshazmy/freeflow">Freeflow</a>
-            <span class="keep">· 280 tests · <a href="https://joshazmy.github.io/freeflow">live demo</a></span>
-          </p>
-        </article>
+    <p class="cue" id="cue">SCROLL&nbsp;&nbsp;DOWN</p>
 
-        <article class="station" id="shipped" tabindex="-1">
-          <p class="kicker">Work</p>
+    <section class="hud" id="hud-about">
+      <article class="slab">
+        <p class="kicker">JHON · JOSHAZMY</p>
+        <h1>I BUILD LOCAL TOOLS, CHROME EXTENSIONS, AND OPEN-SOURCE FEATURES.</h1>
+        <div class="copy">
+          <p>SWE INTERN, TOOLING, QA, OR IMPLEMENTATION.</p>
+          <p>I WRITE THE BRIEF. AGENTS IMPLEMENT. I REVIEW EVIDENCE. I CAN WALK WHAT SHIPS.</p>
+          <p><a href="https://github.com/joshazmy" target="_blank" rel="noreferrer">GITHUB.COM/JOSHAZMY</a></p>
+        </div>
+      </article>
+    </section>
 
-          <section class="case">
-            <h2 class="display">
-              <a href="https://github.com/open-jarvis/OpenJarvis/pull/486">OpenJarvis PR 486</a>
-            </h2>
-            <p>
-              Built image and screen input for jarvis ask (<code>--image</code>, <code>--screen</code>)
-              so it can send a photo or a screenshot to a local vision model. Merged as PR 486
-              (upstream ~9.5k stars).
-            </p>
-            <p>
-              Privacy path: warn before a non-local engine; keep images through sanitization;
-              tests and Vision Input docs.
-            </p>
-          </section>
+    <section class="hud work" id="hud-work">
+      <article class="slab case" id="case">
+        <p class="kicker" id="case-kicker"></p>
+        <h2 id="case-title"></h2>
+        <p class="kind" id="case-kind"></p>
+        <p class="honesty" id="honesty"></p>
+        <ul id="case-bullets"></ul>
+        <p class="links" id="case-links"></p>
+      </article>
+      <nav class="dots" id="dots" aria-label="projects"></nav>
+    </section>
 
-          <section class="case">
-            <h2 class="display"><a href="https://github.com/joshazmy/freeflow">Freeflow</a></h2>
-            <p>
-              Local Linux dictation: hold a key, talk, and cleaned text lands at the cursor.
-              Audio stays on the machine — no cloud, no account, no telemetry.
-            </p>
-            <p>
-              Filler and stutter collapse, punctuation, verbal backtrack, personal dictionary,
-              per-app tone, hands-free mode, GPU transcription, GTK settings, installer.
-              <span class="keep">280 tests.</span>
-              <a href="https://joshazmy.github.io/freeflow">Live demo</a>.
-            </p>
-          </section>
-
-          <section class="case">
-            <h2 class="display"><span class="work-name">Limusic</span></h2>
-            <p>
-              Native Linux end-to-end tests and the dark desk UI for a local YouTube Music
-              desktop client: cold restore, search, queue, lyrics, settings, zoom, CSP,
-              restart persistence. Fork.
-            </p>
-          </section>
-
-          <section class="case">
-            <h2 class="kicker">OSS</h2>
-            <ul class="work">
-              <li>
-                <a class="work-name" href="https://github.com/platformio/platformio-core/pull/5470">PlatformIO Core</a>
-                <span>Relative <code class="keep">--project-dir</code> crashed pio device monitor. PR 5470.</span>
-              </li>
-              <li>
-                <a class="work-name" href="https://github.com/Owloops/claude-powerline/pull/95">claude-powerline</a>
-                <span>Git worktree indicator. Docs for repo name vs ahead/behind arrows. <a href="https://github.com/Owloops/claude-powerline/pull/95">PR 95</a>, <a href="https://github.com/Owloops/claude-powerline/pull/96">96</a>.</span>
-              </li>
-            </ul>
-            <p class="honesty">
-              I can walk every PR here. I did not write OpenJarvis, whisper.cpp, or the original Limusic player.
-            </p>
-          </section>
-        </article>
-
-        <article class="station" id="sunset" tabindex="-1">
-          <p class="kicker">Archive</p>
-          <h2 class="display"><a href="https://github.com/joshazmy/stockylift">StockyLift</a></h2>
-          <p class="meta">Sunset · 31 Aug 2026</p>
-          <p>
-            Chrome extension that exports Shopify Stocky suppliers as CSV/JSON. Stocky had no
-            built-in supplier export and shut down 31 Aug 2026. Keys and supplier data stay in
-            the browser. Automated tests, release packaging, Chrome Web Store listing, and public site.
-          </p>
-          <p class="meta">
-            <a href="https://joshazmy.github.io/stockylift">joshazmy.github.io/stockylift</a>
-          </p>
-        </article>
-
-        <article class="station" id="find" tabindex="-1">
-          <p class="kicker">Contact</p>
-          <p class="lead"><a class="keep" href="mailto:joshua@joshazmy.me">joshua@joshazmy.me</a></p>
-          <p class="meta"><a href="https://github.com/joshazmy">github.com/joshazmy</a></p>
-        </article>
-      </div>
-    </main>
+    <section class="hud more" id="hud-more">
+      <article class="slab edu-slab">
+        <p class="kicker">EDUCATION</p>
+        <ul id="edu-list"></ul>
+        <div class="job" id="edu-job"></div>
+        <p class="kicker">SKILLS</p>
+        <ul id="skill-list"></ul>
+        <p class="kicker">OSS</p>
+        <p class="also" id="edu-also"></p>
+        <p class="kicker find-k">FIND</p>
+        <a class="mail" href="mailto:joshua@joshazmy.me">JOSHUA@JOSHAZMY.ME</a>
+        <a class="mail" href="https://github.com/joshazmy" target="_blank" rel="noreferrer">GITHUB.COM/JOSHAZMY</a>
+      </article>
+    </section>
+    <script src="./main.js" type="module"></script>
   </body>
 </html>
