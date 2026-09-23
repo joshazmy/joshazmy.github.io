@@ -1,4 +1,4 @@
-import { PROJECTS, EDUCATION, EXPERIENCE, ALSO, SKILLS } from "./projects.js";
+import { PROJECTS, EDUCATION, EXPERIENCE, ALSO, OSS, SKILLS } from "./projects.js";
 
 const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
 const plates = [...document.querySelectorAll("#stage [data-plate]")];
@@ -44,9 +44,14 @@ document.getElementById("edu-job").innerHTML =
 document.getElementById("skill-list").innerHTML = SKILLS.map(
   (s) => `<li><strong>${s.name}</strong><span>${s.detail}</span></li>`
 ).join("");
-document.getElementById("edu-also").innerHTML = ALSO.map((a) =>
-  a.href ? `<a href="${a.href}" target="_blank" rel="noreferrer">${a.label}</a>` : a.label
-).join(" · ");
+const linkList = (items) =>
+  items
+    .map((a) =>
+      a.href ? `<a href="${a.href}" target="_blank" rel="noreferrer">${a.label}</a>` : a.label
+    )
+    .join(" · ");
+document.getElementById("edu-also").innerHTML = linkList(ALSO);
+document.getElementById("edu-oss").innerHTML = linkList(OSS);
 
 const dotsEl = document.getElementById("dots");
 dotsEl.innerHTML = PROJECTS.map((p, i) => `<button type="button" data-dot="${i}" aria-label="${p.title}"></button>`).join("");
