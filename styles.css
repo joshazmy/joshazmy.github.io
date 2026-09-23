@@ -51,8 +51,10 @@ button {
   object-fit: cover; opacity: 0; visibility: hidden;
   pointer-events: none;
 }
-#world video[data-plate="home"] { opacity: 1; visibility: visible; }
+#world video[data-plate="home"],
+#world video[data-plate="morph"],
 #world video[data-plate="about"] { object-position: 50% 48%; }
+#world video[data-plate="home"] { opacity: 1; visibility: visible; }
 #morph-seq {
   position: absolute; inset: 0; width: 100%; height: 100%;
   pointer-events: none; opacity: 0; z-index: 2;

@@ -135,25 +135,25 @@ function inMorphScroll() {
   return beat <= 1 && morphPos > 0.004 && morphPos < 0.996;
 }
 
+// Match CSS object-fit:cover + object-position 50% 48% (home/about/#stage).
+const COVER_OX = 0.5;
+const COVER_OY = 0.48;
+
 function coverDraw(ctx, img, w, h) {
   if (!img || !img.naturalWidth) return;
   const ir = img.naturalWidth / img.naturalHeight;
   const cr = w / h;
   let dw;
   let dh;
-  let dx;
-  let dy;
   if (ir > cr) {
     dh = h;
     dw = h * ir;
-    dx = (w - dw) / 2;
-    dy = 0;
   } else {
     dw = w;
     dh = w / ir;
-    dx = 0;
-    dy = (h - dh) / 2;
   }
+  const dx = (w - dw) * COVER_OX;
+  const dy = (h - dh) * COVER_OY;
   ctx.drawImage(img, dx, dy, dw, dh);
 }
 
@@ -291,10 +291,14 @@ function tick(now) {
   const wantAbout = beat <= 1 ? remap(morphPos, 0.78, 1) : 0;
   const wantWork = beat >= PROJECT_START && beat < PROJECT_START + PROJECTS.length ? 1 : 0;
   const wantMore = BEATS[beat].id === "edu" ? 1 : 0;
+  // Park only after morph↔about crossfade finishes so the hoop stays put
+  // while home/morph/about plates share the same cover anchor.
+  const wantPark =
+    wantWork || wantMore || (beat <= 1 && morphPos >= 0.995) ? 1 : 0;
   hudAbout += (wantAbout - hudAbout) * hk;
   hudWork += (wantWork - hudWork) * hk;
   hudMore += (wantMore - hudMore) * hk;
-  hoopPark += ((wantAbout || wantWork || wantMore ? 1 : 0) - hoopPark) * hk;
+  hoopPark += (wantPark - hoopPark) * hk;
   if (transiting) {
     const t = transDur <= 0 ? 1 : clamp((now - transStart) / transDur, 0, 1);
     progress = lerp(transFrom, transTo, easeInOut(t));
