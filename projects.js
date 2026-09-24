@@ -76,7 +76,7 @@ export const PROJECTS = [
     bullets: [
       "Built native Linux end-to-end tests and the dark desk UI for a local YouTube Music desktop client: cold restore, search, queue, lyrics, settings, zoom, CSP, restart persistence.",
     ],
-    links: [],
+    links: [{ label: "github.com/joshazmy/cider-ytm", href: "https://github.com/joshazmy/cider-ytm" }],
   },
   {
     id: "youtube",
