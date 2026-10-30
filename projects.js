@@ -17,6 +17,8 @@ export const EXPERIENCE = {
 
 export const ALSO = [
   { label: "Outlet — Linux browser, in development", href: "" },
+  { label: "reel-engine — private content pipeline", href: "" },
+  { label: "claude-usage-gauge — firmware + simulator", href: "" },
   { label: "platformio-core #5470", href: "https://github.com/platformio/platformio-core/pull/5470" },
   { label: "claude-powerline #95 / #96", href: "https://github.com/Owloops/claude-powerline/pull/95" },
 ];
@@ -101,5 +103,16 @@ export const PROJECTS = [
     ],
     honesty: "Fork. Not original player authorship.",
     links: [],
+  },
+  {
+    id: "youtube",
+    n: "07",
+    title: "YouTube — The Alpha Life",
+    kind: "Channel since 13–14",
+    bullets: [
+      "Started the channel at 13–14. Videos on stocks, NFTs, and memecoins.",
+      "3.25K subscribers, 181 videos. Edit in DaVinci Resolve; thumbnails and graphics in Photoshop and Illustrator.",
+    ],
+    links: [{ label: "youtube.com/@AlphaLife11", href: "https://youtube.com/@AlphaLife11" }],
   },
 ];
