@@ -269,6 +269,7 @@ button {
   color: #e8eef2;
 }
 .find-k { margin-top: 32px; }
+.more .mail-pm { text-transform: none; letter-spacing: 0.14em; }
 .more .mail {
   display: block;
   width: fit-content;
